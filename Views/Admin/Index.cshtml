@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayot.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Admin Dashboard</h1>
+        <div class="row">
+            <!-- Quick Stats -->
+            <div class="col-md-3">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Users</h5>
+                        <p class="card-text">1234</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Orders</h5>
+                        <p class="card-text">567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Sales</h5>
+                        <p class="card-text">$12345</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">New Signups Today</h5>
+                        <p class="card-text">8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Recent Activities
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">User John signed up</li>
+                        <li class="list-group-item">Order #1234 placed</li>
+                        <li class="list-group-item">Product XYZ added</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Notifications
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Low inventory on product ABC</li>
+                        <li class="list-group-item">Pending review on order #1234</li>
+                        <li class="list-group-item">New user signup: Jane</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Sales Over Time
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="salesChart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        User Growth
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="userGrowthChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Quick Links
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary">Add New Product</a>
+                        <a href="#" class="btn btn-secondary">Manage Users</a>
+                        <a href="#" class="btn btn-success">View Orders</a>
+                        <a href="#" class="btn btn-info">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>*@
+    <!-- Include charting library like Chart.js or any other -->
+    <!-- <script src="path/to/chart-library.js"></script>
+    <script>
+        // Initialize charts here
+        // Example for Chart.js
+        // var ctx = document.getElementById('salesChart').getContext('2d');
+        // var salesChart = new Chart(ctx, { type: 'line', data: ... });
+        // var ctx2 = document.getElementById('userGrowthChart').getContext('2d');
+        // var userGrowthChart = new Chart(ctx2, { type: 'bar', data: ... });
+    </script> -->
+</body>
+</html>
+>
+

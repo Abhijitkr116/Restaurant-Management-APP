@@ -1,0 +1,176 @@
+﻿@model RestaurantCopy.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<head>
+    <link src="Stylesheet" href="~/Content/dist/sweetalert2.min.css" />
+</head>
+
+<main class="d-flex justify-content-center align-items-center py-md-5">
+    <div class="Register container">
+        <div class="row first-row py-4 py-md-0 ">
+            <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center position-relative">
+                <div class="circle position-absolute"></div>
+                <img src="~/Content/Images/Register.svg" class="position-relative" alt="">
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                @using (@Html.BeginForm("Register", "Restaurant", FormMethod.Post, new { @class = "p-2 p-md-5 rounded-3" }))
+                {
+                    <h2 class="text-center mb-5">Savor the Experience - Join Us!</h2>
+                    <div class="row second-row">
+                        <div class="col-12">
+                            <label class="form-label mt-4">Name</label>
+                            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label mt-4">Email</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @required = "required", @type = "email" })
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label mt-4">Contact Number</label>
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label mt-4">Username</label>
+                            @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(x => x.Username, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label mt-4">Password</label>
+                            @Html.TextBoxFor(x => x.PasswordHash, new { @class = "form-control", @required = "required", @type = "password" })
+                            @Html.ValidationMessageFor(x => x.PasswordHash, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12 d-grid mt-3">
+                            <p>Already a member?  @Html.ActionLink("Login", "Login", "Restaurant")</p>
+
+                            <input type="submit" class="btn btn-warning" value="Register"/>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<style>
+    @@font-face {
+        font-family: narnia;
+        src: url(/Content/Fonts/Narnia.otf);
+    }
+    *{
+        font-family: Poppins;
+    }
+
+    nav {
+        font-family: Poppins;
+    }
+
+    main {
+        min-height: 94vh;
+        width: 100%;
+    }
+
+    main h2 {
+        font-family: narnia;
+        font-weight: 100;
+        letter-spacing: 0.1rem;
+    }
+
+    .circle {
+        height: 55%;
+        width: 90%;
+        background-color: #fff4d9;
+        border-radius: 50%;
+        animation: float 1s ease-in-out infinite, wave 4s ease-in-out infinite, opacityChange 3s ease-in-out infinite;
+    }
+
+    .Register .first-row {
+        border: 1px solid #000;
+        border-radius: 1rem;
+    }
+
+        .Register .first-row img {
+            height: 50%;
+            width: 100%;
+        }
+
+    .Register .second-row {
+        font-family: poppins;
+    }
+
+
+    .text-danger{
+        font-size: 0.8rem;
+    }
+
+
+
+
+
+
+    @@media all and (max-width: 600px) {
+        .Register .first-row {
+            border: none;
+        }
+    }
+
+
+
+    /*Animations*/
+
+    @@keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+        }
+
+        50% {
+            transform: translateY(-20px) translateX(10px);
+        }
+    }
+
+    @@keyframes wave {
+        0%, 100% {
+            transform: rotate(-10deg);
+            background-color: #f9f1dd;
+        }
+
+        50% {
+            transform: rotate(10deg);
+            background-color: #ffecbb;
+        }
+    }
+
+    @@keyframes opacityChange {
+        0%, 100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+<script src="~/Content/dist/sweetalert2.all.min.js"></script>
+<script>
+    $(document).ready(function () {
+        @Html.Raw(ViewData["Success"]);
+    });
+        function SuccessAlert() {
+            swal.fire({
+                title: "Registration successfull",
+                icon: "success"
+            });
+        }
+</script>

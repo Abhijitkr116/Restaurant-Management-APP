@@ -1,0 +1,102 @@
+﻿@model RestaurantCopy.Models.BookingModel
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Your Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5 p-5 bg-light rounded-3">
+        <h2>Book Your Table</h2>
+        @using (Html.BeginForm("TableBooking", "Restaurant", FormMethod.Post, new { @class = "form-group" }))
+        {
+            <div class="form-group">
+                <label for="bookingDate">Date:</label>
+                @Html.TextBoxFor(x => x.BookingDate, new { @class = "form-control", @required = "required", @type = "date" })
+            </div>
+            <div class="form-group">
+                <label for="bookingDate">Time:</label>
+                @Html.TextBoxFor(x => x.BookingTime, new { @class = "form-control", @required = "required", @type = "time" })
+            </div>
+            <div class="form-group">
+                <label>Duration:</label>
+                @Html.TextBoxFor(x => x.Duration, new { @class = "form-control", @required = "required", @type = "number", @min = "30", @max = "120", @value = "60" })
+            </div>
+            <div class="form-group">
+                <label>Number of Guests:</label>
+                @Html.TextBoxFor(x => x.NumberOfGuests, new { @class = "form-control", @required = "required", @type = "number" })
+            </div>
+            <div class="form-group">
+                <label>Select Tables:</label>
+                @Html.DropDownListFor(x => x.TableId, new List<SelectListItem> { }, "Select Tables", new { @class = "form-control", @id = "tableId", @required = "required" })
+            </div>
+            <div class="col-6 offset-3 d-grid ">
+                <button type="submit" class="btn btn-primary mt-3">Book Table</button>
+            </div>
+        }
+
+
+    </div>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            $('#BookingDate, #BookingTime, #Duration').on('change', function () {
+
+                var bookingDate = $('#BookingDate').val();
+                var bookingTime = $('#BookingTime').val();
+                var bookingTimeDuration = $('#Duration').val();
+
+                if (bookingDate && bookingTime) {
+                    debugger;
+                    $.ajax({
+                        url: '@Url.Action("GetAvailableTables", "Restaurant")',
+                        type: 'GET',
+                        data: { bookingDate: bookingDate, bookingTime: bookingTime, duration: bookingTimeDuration },
+                        success: function (data) {
+                            var tableSelect = $('#tableId');
+                            tableSelect.empty();
+                            data.forEach(function (table) {
+                                var option = $('<option></option>').attr('value', table.TableId)
+                                    .text('Table ' + table.TableNumber + ' (Seats: ' + table.Capacity + ')');
+                                tableSelect.append(option);
+                            });
+                        },
+                        error: function (error) {
+                            console.error('Error fetching tables:', error);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    @*<script>
+        $(document).ready(function () {
+            @Html.Raw(ViewData["Error"]);
+        });
+            function ErrorAlert() {
+                swal.fire({
+                    title: "Login Failed",
+                    text: "Invalid Username or Password!",
+                    icon: "error"
+                });
+            }
+        </script>*@
+</body>
+</html>
+
+
+
+
+

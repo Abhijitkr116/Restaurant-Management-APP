@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RestaurantCopy.Models.FoodItemModel>
+@{
+    ViewBag.Title = "GetItems";
+    Layout = "~/Views/Shared/_AdminLayot.cshtml";
+}
+
+
+
+<div class="container min-vh-100">
+
+<h2 class="mt-5 text-center">Our Items</h2>
+
+    <div class="table-responsive mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                 @*   <th>Item Id</th>*@
+                    <th>Item Name</th>
+                    @*<th>Item Type</th>*@
+                    <th>Item Price</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                       @* <td>@i.Id</td>*@
+                        <td>@i.ItemName</td>
+                        @*<td>@i.FoodType</td>*@
+                        <td>₹ @i.Price</td>
+                        <td>@Html.ActionLink("Edit", "EditDetails", new { id = @i.Id })</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,288 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+}
+
+<main>
+    <div class="title py-5 mt-3 d-flex flex-column align-items-center">
+        <h1 class="text-center">Explore Our Dishes</h1>
+        <img src="~/Content/Images/Asset 12.png" alt="">
+    </div>
+
+    <div class="page1 min-vh-100">
+        <div class="container">
+
+            <div class="Veg-starters pb-5">
+                <div class="contents">
+                    <div class="content position-relative">
+                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                    </div>
+                    <h1 class="text-center heading">Starters</h1>
+                </div>
+                <div class="box" style="margin-top: 4rem;">
+                    <div class="row">
+                        <div class="col-1 col-md-2"></div>
+                        <div class="col-7 col-md-6 Item-name">
+                            <h2 class="mb-3 items-name">Items name</h2>
+                            <div id="StartersName">
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="mb-3 price">Price</h2>
+                            <div id="StartersPrice">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Beverages py-5">
+                <div class="contents">
+                    <div class="content position-relative">
+                        <img src="https://images.pexels.com/photos/4728009/pexels-photo-4728009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                    </div>
+                    <h1 class="text-center heading">Beverages</h1>
+                </div>
+                <div class="box" style="margin-top: 4rem;">
+                    <div class="row">
+                        <div class="col-1 col-md-2"></div>
+                        <div class="col-7 col-md-6 Item-name">
+                            <h2 class="mb-3 items-name">Items name</h2>
+                            <div id="BeveragesName">
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="mb-3 price">Price</h2>
+                            <div id="BeveragesPrice">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Entrees py-5">
+                <div class="contents">
+                    <div class="content position-relative">
+                        <img src="https://images.pexels.com/photos/24289169/pexels-photo-24289169/free-photo-of-a-white-plate-with-chicken-and-vegetables-on-it.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                    </div>
+                    <h1 class="text-center heading">Entrees</h1>
+                </div>
+                <div class="box" style="margin-top: 4rem;">
+                    <div class="row">
+                        <div class="col-1 col-md-2"></div>
+                        <div class="col-7 col-md-6 Item-name">
+                            <h2 class="mb-3 items-name">Items name</h2>
+                            <div id="EntreesName">
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="mb-3 price">Price</h2>
+                            <div id="EntreesPrice">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Desserts py-5">
+                <div class="contents">
+                    <div class="content position-relative">
+                        <img src="https://images.pexels.com/photos/2144112/pexels-photo-2144112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                    </div>
+                    <h1 class="text-center heading">Desserts</h1>
+                </div>
+                <div class="box" style="margin-top: 4rem;">
+                    <div class="row">
+                        <div class="col-1 col-md-2"></div>
+                        <div class="col-7 col-md-6 Item-name">
+                            <h2 class="mb-3 items-name">Items name</h2>
+                            <div id="DessertsName">
+                               
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="mb-3 price">Price</h2>
+                            <div id="DessertsPrice">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: '@Url.Action("getAllItems", "Restaurant")',
+                    type: 'GET',
+                    dataType: 'json',
+
+                    success: function (response) {
+
+                        var startersName = '';
+                        var startersprice = '';
+
+                        var dessertsName = '';
+                        var dessertsprice = '';
+
+                        var beveragesName = '';
+                        var beveragesprice = '';
+
+                        var entreesName = '';
+                        var entreesprice = '';
+                        
+
+                        $.each(response.data, function (index, item) {
+                            if (item.ItemTypeId == 1) {
+                                startersName += '<p>' + item.ItemName + '</p>';
+                                startersprice += '<p>' + '₹ ' + item.Price + '</p>';
+                            }
+                            if (item.ItemTypeId == 2) {
+                                dessertsName += '<p>' + item.ItemName + '</p>';
+                                dessertsprice += '<p>' + '₹ ' + item.Price + '</p>';
+                            }
+                            if (item.ItemTypeId == 3) {
+                                beveragesName += '<p>' + item.ItemName + '</p>';
+                                beveragesprice += '<p>' + '₹ ' + item.Price + '</p>';
+                            }
+                            if (item.ItemTypeId == 4) {
+                                entreesName += '<p>' + item.ItemName + '</p>';
+                                entreesprice += '<p>' + '₹ ' + item.Price + '</p>';
+                            }
+                        });
+
+                        $('#StartersName').html(startersName);
+                        $('#StartersPrice').html(startersprice);
+
+                        $('#DessertsName').html(dessertsName);
+                        $('#DessertsPrice').html(dessertsprice);
+
+                        $('#BeveragesName').html(beveragesName);
+                        $('#BeveragesPrice').html(beveragesprice);
+
+                        $('#EntreesName').html(entreesName);
+                        $('#EntreesPrice').html(entreesprice);
+
+
+                    },
+
+                    error: function (error) {
+                        console.log("This is a error", error);
+                    }
+                });
+
+
+
+            })
+
+</script>
+
+
+<style>
+    @@font-face {
+    font-family: narnia;
+    src: url(/Content/Fonts/Narnia.otf);
+    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Open Sans;
+}
+.title h1{
+    font-size: 6vw;
+}
+.title img{
+    width: 60%;
+}
+
+.container{
+    margin-top: 7vh;
+}
+tbody{
+    background: none;
+}
+.page1{
+    border-bottom: 1px solid #222;
+}
+.content{
+    height: 50vh;
+    /* width: 100%; */
+    border-top-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    z-index: 1;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.contents{
+    /* border: 2px solid #000; */
+    /* padding-bottom: 6rem; */
+}
+.heading{
+    position: sticky;
+    bottom: 20rem;
+    font-family: narnia;
+    font-size: 10vw;
+}
+
+h1{
+    font-family: narnia;
+}
+
+/* Table Styling */
+
+.items-name, .price{
+    font-size: 2.8rem;
+    text-transform: capitalize;
+    font-weight: 200;
+    font-family: narnia;
+    text-decoration: underline;
+}
+.box p{
+    font-size: 1.2rem;
+}
+
+
+@@media all and (max-width: 600px){
+    .title h1{
+        font-size: 8vw;
+    }
+    .title img{
+        width: 80%;
+    }
+
+    .content{
+        height: 30vh;
+        border-top-left-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+    }
+    .Item-name{
+        /* margin-left: 0.4rem; */
+    }
+    .items-name, .price{
+        font-size: 1.4rem;
+    }
+
+
+}
+</style>

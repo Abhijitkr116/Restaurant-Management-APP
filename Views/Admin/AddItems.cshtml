@@ -1,0 +1,54 @@
+﻿@model RestaurantCopy.Models.FoodItemModel
+@{
+    ViewBag.Title = "AddItems";
+    Layout = "~/Views/Shared/_AdminLayot.cshtml";
+}
+
+<h2 class="text-center">AddItems</h2>
+
+
+@using (Html.BeginForm("AddItems","Admin", FormMethod.Post))
+            {
+                <section class="row bg-light p-5 rounded-3">
+                    <div class="col-12 col-md-8 offset-md-2 my-2">
+                        <label class="form-label">Item Name</label>
+                        @Html.TextBoxFor(x => x.ItemName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-2 my-2">
+                        <label class="form-label">Item Category</label>
+                        @Html.DropDownListFor(x => x.FoodTypeId, new List<SelectListItem> {}, "Select Item Categories", new { @class = "form-control", @id= "foodTypes" })
+
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-2 my-2">
+                        <label class="form-label">Item price</label>
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-12 col-md-4 mt-4 offset-4 d-grid">
+                        <input type="submit" class="btn btn-primary"/>
+                    </div>
+                </section>
+            }
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "@Url.Action("GetFoodTypes", "Admin")",
+            type: "GET",
+            dataType: "json",
+            success: function(response) {
+                // Iterate through the received data and update the HTML
+                $.each(response.data, function(index, item) {
+                    $("#foodTypes").append("<option value='" + item.Id + "'>" + item.TypeName + "</option>");
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+</script>

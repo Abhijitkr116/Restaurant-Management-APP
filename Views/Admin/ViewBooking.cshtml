@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "ViewBooking";
+    Layout = "~/Views/Shared/_AdminLayot.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h2 class="mb-4">Table Bookings</h2>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="date" id="dateFilter" class="form-control" placeholder="Select a date">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" onclick="filterTable()">Filter</button>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Guests</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTable">
+                <tr data-date="2024-07-21">
+                    <th scope="row">1</th>
+                    <td>Abhijit Kumar</td>
+                    <td>8</td>
+                    <td>9:00 AM</td>
+                    <td>2024-07-21</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-22">
+                    <th scope="row">2</th>
+                    <td>Sujeet Kumar</td>
+                    <td>2</td>
+                    <td>9:00 AM</td>
+                    <td>2024-07-22</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-23">
+                    <th scope="row">3</th>
+                    <td>Aquib Warsi</td>
+                    <td>4</td>
+                    <td>2:00 PM</td>
+                    <td>2024-07-23</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-24">
+                    <th scope="row">4</th>
+                    <td>Priya Sharma</td>
+                    <td>6</td>
+                    <td>12:30 PM</td>
+                    <td>2024-07-24</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-25">
+                    <th scope="row">5</th>
+                    <td>Ravi Patel</td>
+                    <td>3</td>
+                    <td>1:00 PM</td>
+                    <td>2024-07-25</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-21">
+                    <th scope="row">6</th>
+                    <td>Meera Desai</td>
+                    <td>5</td>
+                    <td>3:00 PM</td>
+                    <td>2024-07-21</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-22">
+                    <th scope="row">7</th>
+                    <td>Vikram Singh</td>
+                    <td>7</td>
+                    <td>6:00 PM</td>
+                    <td>2024-07-22</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-23">
+                    <th scope="row">8</th>
+                    <td>Simran Kaur</td>
+                    <td>4</td>
+                    <td>7:00 PM</td>
+                    <td>2024-07-23</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-24">
+                    <th scope="row">9</th>
+                    <td>Arjun Rao</td>
+                    <td>8</td>
+                    <td>8:00 PM</td>
+                    <td>2024-07-24</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-25">
+                    <th scope="row">10</th>
+                    <td>Nisha Agarwal</td>
+                    <td>2</td>
+                    <td>6:30 PM</td>
+                    <td>2024-07-25</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-21">
+                    <th scope="row">11</th>
+                    <td>Siddharth Gupta</td>
+                    <td>5</td>
+                    <td>7:30 PM</td>
+                    <td>2024-07-21</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-22">
+                    <th scope="row">12</th>
+                    <td>Rita Mehta</td>
+                    <td>3</td>
+                    <td>8:00 PM</td>
+                    <td>2024-07-22</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-23">
+                    <th scope="row">13</th>
+                    <td>Rajeev Joshi</td>
+                    <td>6</td>
+                    <td>9:00 PM</td>
+                    <td>2024-07-23</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-24">
+                    <th scope="row">14</td>
+                    <td>Neha Singh</td>
+                    <td>4</td>
+                    <td>10:00 PM</td>
+                    <td>2024-07-24</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr data-date="2024-07-25">
+                    <th scope="row">15</td>
+                    <td>Amit Sharma</td>
+                    <td>7</td>
+                    <td>11:00 PM</td>
+                    <td>2024-07-25</td>
+                    <td>
+                        <button class="btn btn-outline-success">Approve</button>
+                        <button class="btn btn-outline-danger">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+    function filterTable() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("dateFilter");
+        filter = input.value;
+        table = document.getElementById("bookingTable");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getAttribute("data-date");
+            if (td) {
+                if (td.indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    // JavaScript to handle date filtering
+    document.getElementById('filterForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const selectedDate = document.getElementById('filterDate').value;
+        const rows = document.querySelectorAll('#bookingTable tr');
+
+        rows.forEach(row => {
+            const dateCell = row.querySelector('td:nth-child(4)');
+            if (dateCell) {
+                const rowDate = dateCell.textContent.trim();
+                if (selectedDate === "" || rowDate.includes(selectedDate)) {
+                    row.style.display = ""; // Show row
+                } else {
+                    row.style.display = "none"; // Hide row
+                }
+            }
+        });
+    });
+</script>
+
+<style>
+    @@font-face {
+    font-family: narnia;
+    src: url(Fonts/Narnia.ttf);
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    main{
+    width: 100%;
+    background-color: #fff;
+    }
+    nav{
+        font-family: poppins;
+        background-color: #000000;
+    }
+
+    .Request-box{
+        height: 70vh;
+        margin-top: 10vh;
+    }
+    .date-filter {
+        margin-bottom: 20px;
+    }
+</style>

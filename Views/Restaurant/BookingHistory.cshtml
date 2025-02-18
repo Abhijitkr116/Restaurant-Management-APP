@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RestaurantCopy.Models.BookingHistoryModel>
+
+@{
+    ViewBag.Title = "BookingHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Booking History</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Booking Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Number of Guests</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.BookingId</td>
+                <td>@booking.BookingDate.ToString("MM/dd/yyyy")</td>
+                <td>@booking.FormattedBookingStartTime</td>
+                <td>@booking.FormattedBookingEndTime</td>
+                <td>@booking.NumberOfGuests</td>
+                <td>@booking.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

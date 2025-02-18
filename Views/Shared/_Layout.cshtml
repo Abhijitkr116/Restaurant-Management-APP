@@ -1,0 +1,196 @@
+﻿@model RestaurantCopy.Models.BookingModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <main>
+        <nav class="navbar bg-black navbar-expand-lg sticky-top">
+            <div class="container-fluid justify-content-between">
+                <a href="#" class="navbar-brand text-light">Davinchi</a>
+                <button class="navbar-toggler bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="ri-menu-2-fill"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav align-items-center">
+                        @Html.ActionLink("Home", "Index", "Restaurant", new { area = "" }, new { @class = "nav-link text-light" })
+                        @Html.ActionLink("Menu", "Menu", "Restaurant", new { area = "" }, new { @class = "nav-link text-light" })
+                        @Html.ActionLink("Book table", "TableBooking", "Restaurant", new { area = "" }, new { @class = "nav-link text-light" })
+                        @Html.ActionLink("Bookings", "BookingHistory", "Restaurant", new { area = "" }, new { @class = "nav-link text-light" })
+                        @if (Session["Username"] != null)
+                        {
+                            <span class="nav-link text-light d-lg-none">@Session["Username"]</span>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Login", "Restaurant", new { area = "" }, new { @class = "btn btn-outline-light d-lg-none w-sm-25" })
+                        }
+                    </div>
+                </div>
+
+                <div class="nav-item d-none d-lg-flex">
+                    @if (Session["Username"] != null)
+                    {
+                        <a class="nav-link text-light logoutbtn">@Session["Username"]<i class="ri-arrow-down-s-fill"></i></a>
+
+
+                        <ul class="bg-light shadow rounded-2 logout" style="padding: 0;">
+                            <li class="nav-link d-flex align-items-center"><i class="ri-account-circle-line fs-4"></i><a class="nav-link text-dark">My Profile</a></li>
+                            <li class="nav-link p-0"><hr class="dropdown-divider" /></li>
+                            <li class="nav-link d-flex align-items-center"><i class="ri-settings-4-line fs-4"></i><a class="nav-link text-dark">Settings</a></li>
+                            <li class="nav-link p-0"><hr class="dropdown-divider" /></li>
+                            <li class="nav-link d-flex align-items-center"><i class="ri-logout-box-r-line fs-4"></i><a href="@Url.Action("Logout", "Restaurant")" class="nav-link text-dark">Logout</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Login", "Login", "Restaurant", new { area = "" }, new { @class = "btn btn-outline-light" })
+                    }
+                </div>
+            </div>
+        </nav>
+        <div class="">
+            @RenderBody()
+            <hr />
+            <footer class="">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 mt-5 d-flex flex-column gap-1">
+                            <h3 class="mb-3">Davinchi</h3>
+                            <p class="content1">Savor the flavors of India in every bite, where each dish is a masterpiece crafted with love and passion.</p>
+                            <div class="socials d-flex gap-3 fs-4">
+                                <a href="#" class="ri-facebook-circle-fill nav-link"></a>
+                                <a href="#" class="ri-instagram-fill nav-link"></a>
+                                <a href="#" class="ri-twitter-x-fill nav-link"></a>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-lg-6 mt-5">
+                            <div class="row">
+                                <div class="col-12 col-md-5 d-flex flex-column gap-1">
+                                    <h3 class="mb-3">Informations</h3>
+                                    <a href="#" class="nav-link">Home</a>
+                                    <a href="#" class="nav-link">Order</a>
+                                    <a href="#" class="nav-link">About</a>
+                                    <a href="#" class="nav-link">Contact</a>
+                                </div>
+                                <div class="col-12 col-md-5 d-flex flex-column gap-1 reach">
+                                    <h3 class="mb-3">Reach Out</h3>
+                                    <div class="address d-flex gap-2">
+                                        <i class="ri-map-pin-2-fill"></i>
+                                        <p>Sector-6, New Town, Kolkatta</p>
+                                    </div>
+                                    <div class="mail d-flex gap-2">
+                                        <i class="ri-mail-fill"></i>
+                                        <p>thedavinchi@gmail.com</p>
+                                    </div>
+                                    <div class="contact d-flex gap-2">
+                                        <i class="ri-phone-fill"></i>
+                                        <p>91-0000666777</p>
+                                    </div>
+                                    <button class="btn btn-warning">Contact us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <p class="text-center fs-5 py-4">Copyright © Davinchi @DateTime.Now.Year. All rights reserved. </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        var flag = 0;
+        $(".logoutbtn").click(function () {
+            if (flag == 0) {
+                $(".logout").css({
+                    transform: "translateX(0%) translateY(21%)"
+                });
+                flag = 1;
+            }
+            else {
+                $(".logout").css({
+                    transform: "translateX(150%) translateY(21%)"
+                });
+                flag = 0;
+            }
+        })
+    });
+</script>
+
+<style>
+    @@font-face {
+        font-family: narnia;
+        src: url(/Content/Fonts/Narnia.otf);
+    }
+
+    nav {
+        font-family: 'Poppins', sans-serif;
+    }
+    nav a{
+        cursor: pointer;
+    }
+    nav .logout{
+        overflow: hidden;
+        position: absolute;
+        transform: translateX(150%)translateY(21%);
+        transition: all 0.3s ease;
+    }
+    nav .logout li:hover{
+        background-color: lightgray;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    footer {
+        padding: 0 3rem;
+        font-family: Poppins;
+    }
+
+        footer .socials {
+            margin-top: 1.5rem;
+        }
+
+        footer .content1 {
+            width: 60%;
+        }
+
+    @@media all and (max-width: 600px) {
+        footer {
+            padding: 0 2rem;
+        }
+
+            footer .content1 {
+                width: 100%;
+            }
+
+            footer .socials {
+                margin-top: 0;
+            }
+
+            footer .reach {
+                margin-top: 4rem;
+            }
+    }
+</style>

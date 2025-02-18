@@ -1,0 +1,30 @@
+﻿@model List<RestaurantCopy.Models.Registration>
+@{
+    ViewBag.Title = "GetLoginData";
+}
+
+<h2 class="text-center py-3 ">GetLoginData</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach(var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Name</td>
+                    <td>@i.Phone</td>
+                    <td>@i.Email</td>
+                    <td>@i.Password</td>
+                </tr>
+            }
+     </tbody>
+</table>

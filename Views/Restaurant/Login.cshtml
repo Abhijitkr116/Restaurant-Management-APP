@@ -1,0 +1,162 @@
+﻿@model RestaurantCopy.Models.UserModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+
+<main class="d-flex justify-content-center align-items-center py-md-5">
+    <div class="container Login">
+        <div class="row first-row py-4 py-md-0">
+            <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center position-relative" style="height: 82vh;">
+                <div class="circle position-absolute"></div>
+                <img src="~/Content/Images/Login.svg" class="position-relative" alt="">
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                @using (Html.BeginForm("Login", "Restaurant", FormMethod.Post, new { @class = "p-2 p-md-5 my-5 rounded-3" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h2 class="text-center mb-5">Welcome Back! Please Log In</h2>
+                    <div class="row second-row">
+                        <div class="col-12">
+                            <label class="form-label">Username</label>
+                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control mb-4", @placeholder = "Enter your username", @required = "required" })
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Password</label>
+                            @Html.TextBoxFor(model => model.PasswordHash, new { @class = "form-control mb-4", @placeholder = "Enter your password", @required = "required", @type = "password" })
+                        </div>
+                        <div class="col-12 d-grid mt-3">
+                            <button type="submit" class="btn btn-warning">Login</button>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <p>Don't have an account?  @Html.ActionLink("Register", "Register", "Restaurant")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+<script src="~/Content/dist/sweetalert2.all.min.js"></script>
+<script>
+    $(document).ready(function () {
+        @Html.Raw(ViewData["Error"]);
+    });
+        function ErrorAlert() {
+            swal.fire({
+                title: "Login Failed",
+                text: "Invalid Username or Password!",
+                icon: "error"
+            });
+        }
+</script>
+
+@*<script>
+    $(document).ready(function () {
+        var message = "@ViewBag.message"; // Quote the ViewBag value
+
+        if (message) {
+            alert(message);
+        }
+    });
+</script>*@
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    main {
+        min-height: 94vh;
+        width: 100%;
+    }
+
+    h2 {
+        font-family: 'narnia';
+        font-weight: 100;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .circle {
+        height: 85%;
+        width: 70%;
+        background-color: #fff4d9;
+        border-radius: 50%;
+        animation: float 1s ease-in-out infinite, wave 4s ease-in-out infinite, opacityChange 3s ease-in-out infinite;
+    }
+
+    .Login .first-row {
+        border: 1px solid #000;
+        border-radius: 1rem;
+    }
+
+        .Login .first-row img {
+            height: 60%;
+            width: 100%;
+        }
+
+    .Login .second-row {
+        font-family: poppins;
+    }
+
+
+
+    @@media all and (max-width: 600px) {
+
+        .Login .first-row {
+            border: none;
+        }
+    }
+
+
+    /*Animations*/
+
+
+    @@keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+        }
+
+        50% {
+            transform: translateY(-20px) translateX(10px);
+        }
+    }
+
+    @@keyframes wave {
+        0%, 100% {
+            transform: rotate(-40deg);
+            background-color: #f9f1dd;
+        }
+
+        50% {
+            transform: rotate(40deg);
+            background-color: #ffecbb;
+        }
+    }
+
+    @@keyframes opacityChange {
+        0%, 100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+</style>

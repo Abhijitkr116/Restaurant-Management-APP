@@ -1,0 +1,696 @@
+﻿<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<main>
+
+    <div class="page1">
+        <div class="video">
+            <video autoplay muted loop src="~/Content/Videos/Backgroundpage (2).mp4"></video>
+
+            <div class="content d-flex flex-column justify-content-center align-items-center">
+                <h2 class="">
+                    Welcome to <br>Davinchi
+                    <span>Welcome to <br>Davinchi</span>
+                </h2>
+                <p class="mt-2">Indulge in a dining experience like no other</p>
+                @Html.ActionLink("Reserve Your Table Now", "TableBooking", "Restaurant", new { area = "" }, new { @class = "btn reserve-btn mt-4" })
+            </div>
+        </div>
+    </div>
+
+    <div class="page2 d-flex flex-column justify-content-center">
+        <h2>About us</h2>
+        <div class="image">
+            <img src="~/Content/Images/About.jpeg" alt="Restaurant">
+        </div>
+        <p class="pt-4">Welcome to <span>Davinchi</span>, where passion meets perfection. Immerse yourself in a culinary journey crafted with care, creativity, and a dash of magic. From farm-fresh ingredients to exquisite flavors, every dish tells a story of dedication and innovation. Whether you're craving an intimate dinner for two or celebrating a special occasion with friends and family, our restaurant offers an unforgettable experience that tantalizes the senses and leaves a lasting impression. Join us and discover why we're more than just a meal – we're a destination.</p>
+    </div>
+
+
+    <!-- Our Menu -->
+    <div class="page3 p-2">
+        <div class="container-fluid">
+            <h2>Our menu</h2>
+            <div class="Starters">
+                <h3 class="display-5 ps-md-3 mt-5 py-3">Starters</h3>
+                <div class="row mb-3">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/3928854/pexels-photo-3928854.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Paneer Tikka</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/5335751/pexels-photo-5335751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Vegetable spring rolls</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/usashis-gmail.com/Grilled_Stuffed_Mushrooms_Recipe_With_Onion_Parmesan_Herbs_400.jpg" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Stuffed mushrooms</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/17433353/pexels-photo-17433353/free-photo-of-a-vada-pav-lunchbox.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Pav bhaji</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Entrees">
+                <h3 class="display-5 ps-md-3 mt-5 py-3">Entrees</h3>
+                <div class="row mb-3">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://thecozyapron.com/wp-content/uploads/2018/03/baja-fish-tacos_thecozyapron_1.jpg" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Fish Tacos</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://as1.ftcdn.net/v2/jpg/08/21/67/78/1000_F_821677844_s0spOhb0cM1OuuY0a1Zgorp8ywmVY48P.jpg" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Chicken Pot Pie</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://dinnerthendessert.com/wp-content/uploads/2021/05/Chicken-Alfredo-Pasta-4x3-1.jpg" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Chicken Alfredo</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://as1.ftcdn.net/v2/jpg/07/16/75/20/1000_F_716752017_lXCS6ToclcncnWRmtXQtEQgqEFiOXPTE.jpg" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Paneer butter masala</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Sweets">
+                <h3 class="display-5 ps-md-3 mt-5 py-3">Sweets</h3>
+                <div class="row mb-3">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/15014919/pexels-photo-15014919/free-photo-of-bowl-of-gulab-jamun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Gulab Jamun</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/1132558/pexels-photo-1132558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Strawberry Ice cream</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/7182054/pexels-photo-7182054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Barfi</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://images.pexels.com/photos/9291128/pexels-photo-9291128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Chocolate pie</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Beverages">
+                <h3 class="display-5 ps-md-3 mt-5 py-3">Beverages</h3>
+                <div class="row mb-3">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://w0.peakpx.com/wallpaper/286/242/HD-wallpaper-food-cocktail-drink.jpg" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Cold Drinks</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://cdn.pixabay.com/photo/2014/09/26/19/51/drink-462776_1280.jpg" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Coca cola</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://hips.hearstapps.com/hmg-prod/images/drinks-to-avoid-1621959532.jpg?crop=1.00xw:0.752xh;0,0.142xh&resize=1200:*" class="w-100 h-100 object-fit-cover img-fluid" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Orange Juice</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://w0.peakpx.com/wallpaper/222/776/HD-wallpaper-tea-cup-hot-pouring-liquid.jpg" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Tea</h5>
+                        </div>
+                        <div class="item">
+                            <div class="rounded-2 overflow-hidden" style="height: 35vh;">
+                                <img src="https://img.freepik.com/premium-photo/cup-coffee-with-latte-art-rim_865967-7816.jpg" alt="">
+                            </div>
+                            <h5 class="text-center mt-2">Hot Coffee</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="offset-3 col-6">
+                    @Html.ActionLink("View More", "Menu", "Restaurant", new { area = "" }, new { @class = "btn btn-outline-warning w-100" })
+                    @*<a href="Items.html" class="btn btn-outline-warning w-100">View More</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our chef's -->
+    <div class="page4">
+        <div class="container-fluid">
+            <div class="row">
+                <h3 class="display-5 pt-5 pb-3 mt-5 text-capitalize text-decoration-underline text-center">Meet Our Culinary Masters</h3>
+                <p class="text-center">At our <span>restaurant</span>, we take pride in the culinary expertise and creativity of our <span>chefs</span>. Each one brings a unique flair and passion to the kitchen, crafting dishes that not only delight the palate but also tell a story of tradition, innovation, and love for food. Our <span>chefs</span> are dedicated to using the finest ingredients and impeccable techniques to create unforgettable dining experiences. Dive into the world of gourmet excellence and discover the talent behind our exceptional cuisine.</p>
+                <div class="col-md-4 mt-3">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/4253302/pexels-photo-4253302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="img-fluid  rounded-2" style="height: 55vh;">
+                        <div class="card-title">
+                            <h5 class="text-center mt-3 mb-1">Chef Alessandro Romano</h5>
+                        </div>
+                        <div class="social-links pb-2 d-flex gap-4 justify-content-center">
+                            <a href="#" class="ri-facebook-circle-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-youtube-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-instagram-fill nav-link fs-3"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/6957673/pexels-photo-6957673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="img-fluid rounded-2" style="height: 55vh;">
+                        <div class="card-title">
+                            <h5 class="text-center mt-3 mb-1">Chef Alessandro Romano</h5>
+                        </div>
+                        <div class="social-links pb-2 d-flex gap-4 justify-content-center">
+                            <a href="#" class="ri-facebook-circle-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-youtube-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-instagram-fill nav-link fs-3"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/8879653/pexels-photo-8879653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="img-fluid rounded-2" style="height: 55vh;">
+                        <div class="card-title">
+                            <h5 class="text-center mt-3 mb-1">Chef Alessandro Romano</h5>
+                        </div>
+                        <div class="social-links pb-2 d-flex gap-4 justify-content-center">
+                            <a href="#" class="ri-facebook-circle-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-youtube-fill nav-link fs-3"></a>
+                            <a href="#" class="ri-instagram-fill nav-link fs-3"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="page5">
+        <div class="container">
+            <div class="row mt-5">
+                <h3 class="display-5 pt-5 pb-3 mt-5 text-capitalize text-decoration-underline text-center">What Our Guests Are Saying</h3>
+                <p class="text-center">Our guests' satisfaction is our top priority, and we are thrilled to share their experiences with you. From heartwarming compliments to memorable dining moments, these testimonials highlight the exceptional service and delicious cuisine that keep our guests coming back. Read on to see why so many have chosen us as their favorite dining destination.</p>
+                <div class="owl-carousel owl-theme px-md-5 mt-5">
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Ms. Aisha Patel</h4>
+                            <p class="text-center">"The service was impeccable, and the staff went out of their way to make our evening special. The dishes were beautifully presented and tasted just as amazing as they looked. Highly recommend!"</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Mrs. Priya Sharma</h4>
+                            <p class="text-center">"The attention to detail and the flavors were extraordinary. A perfect evening in every sense. We will definitely be back!"</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Ms. Anjali Nair</h4>
+                            <p class="text-center">"An exceptional dining experience. The ambiance was inviting, and the food was absolutely delicious. Highly recommend to all food lovers!"</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/2553653/pexels-photo-2553653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Dr. Ritu Gupta</h4>
+                            <p class="text-center">"The culinary skills showcased were outstanding. The service was warm and welcoming. A truly memorable dining experience."</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/20304888/pexels-photo-20304888/free-photo-of-young-man-looking-out-the-window.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Mr. Vikram Singh</h4>
+                            <p class="text-center">"Every dish was a delight, and the service was top-notch. The ambiance made it a perfect place for a special occasion."</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Mr. Arjun Desai</h4>
+                            <p class="text-center">"An amazing experience from start to finish. The flavors, the presentation, and the service were all impeccable. Can't wait to visit again!"</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Mr. Virat Singhal</h4>
+                            <p class="text-center">"The restaurant offers an exceptional dining experience. The chefs are masters of their craft, and the service is always friendly and professional."</p>
+                        </div>
+                    </div>
+                    <div class="itemss">
+                        <div class="rounded-3 bg-light overflow-hidden d-flex flex-column align-items-center" style="padding: 2rem 0;">
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-100 w-100 object-fit-cover img-fluid">
+                            <h4 class="mt-2">Mr. Sam Sen</h4>
+                            <p class="text-center">"The dining experience here is unparalleled. From the exquisite dishes to the attentive service, everything was perfect. Highly recommended!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.page3 .owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+        }
+    });
+
+    $('.page5 .owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1200: {
+                items: 3
+            }
+        }
+    });
+</script>
+
+
+<style>
+    @@font-face {
+        font-family: narnia;
+        src: url(../../Content/Fonts/Narnia.otf);
+    }
+
+    main {
+        width: 100%;
+        background-color: #fff;
+    }
+
+    nav {
+        font-family: poppins;
+    }
+
+    .page1 {
+        height: 95vh;
+        width: 100%;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+        .video video {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+    .content {
+        position: relative;
+        background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3px );
+        height: 100%;
+        width: 100%;
+        padding-left: 2vw;
+    }
+
+        .content h2 {
+            font-size: 7vw;
+            font-weight: 700;
+            line-height: 7.5vw;
+            text-align: center;
+            text-transform: uppercase;
+            color: #dbdbdb;
+            position: relative;
+            font-family: narnia;
+            letter-spacing: 0.2rem;
+        }
+
+            .content h2 span {
+                position: absolute;
+                top: 0;
+                left: 0.4%;
+                font-size: 6.9vw;
+                color: #c7c000;
+            }
+
+        .content p {
+            color: #fff;
+            text-align: center;
+            padding-left: 0.6rem;
+            font-size: 1.5vw;
+            font-weight: 300;
+        }
+
+        .content .reserve-btn {
+            color: #fff;
+            border: 2px solid #c7c000;
+            transition: all 0.4s ease;
+        }
+
+            .content .reserve-btn:hover {
+                color: #000000;
+                background-color: #c7c000;
+            }
+
+
+
+
+
+    .page2 {
+        height: 100vh;
+        width: 100%;
+        padding: 3rem;
+        font-family: "Open Sans", sans-serif;
+    }
+
+        .page2 h2 {
+            font-size: 4vw;
+            font-family: narnia;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+        }
+
+        .page2 .image {
+            height: 40%;
+            width: 40%;
+            overflow: hidden;
+        }
+
+            .page2 .image img {
+                height: 100%;
+                width: 100%;
+                transition: all 0.2s ease;
+                object-fit: cover;
+                object-position: center;
+                animation: zoom 5s infinite ease-in-out;
+            }
+
+                .page2 .image img:hover {
+                    scale: 1.1;
+                }
+
+        .page2 p {
+            font-size: 1.6vw;
+            font-weight: 100;
+            text-align: justify;
+            line-height: 2.5vw;
+            width: 75%;
+        }
+
+            .page2 p span {
+                font-family: narnia;
+                letter-spacing: 0.15rem;
+                color: lightsalmon;
+            }
+
+
+
+    .page3 {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+        .page3 h2 {
+            font-family: narnia;
+            text-align: center;
+            font-size: 7rem;
+            text-decoration: underline;
+        }
+
+        .page3 h3 {
+            font-family: narnia;
+            font-size: 4rem;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page3 h5 {
+            text-transform: capitalize;
+        }
+
+        .page3 img {
+            transition: all 0.3s ease;
+        }
+
+            .page3 img:hover {
+                scale: 1.1;
+            }
+
+        .page3 .rounded-2 img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .page4 {
+        min-height: 100vh;
+    }
+
+        .page4 .social-links {
+            color: lightsalmon;
+        }
+
+            .page4 .social-links a {
+                border: 1px solid #c0c0c0;
+                padding: 0.1rem 0.6rem;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+            }
+
+                .page4 .social-links a:hover {
+                    background-color: rgb(227, 227, 227);
+                }
+
+        .page4 h3 {
+            font-family: narnia;
+            font-size: 5rem;
+        }
+
+        .page4 .row p {
+            padding: 0 10vw;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+            .page4 .row p span {
+                font-weight: 500;
+                color: lightsalmon;
+                text-transform: capitalize;
+            }
+
+
+        .page4 .card img {
+            object-position: 100% 20% !important;
+            object-fit: cover;
+            margin: 1rem;
+        }
+
+
+    .page5 {
+        min-height: 100vh;
+    }
+
+        .page5 h3 {
+            font-family: narnia;
+            font-size: 5rem;
+        }
+
+        .page5 .row p {
+            padding: 0 10vw;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .page5 .itemss img {
+            height: 85px !important;
+            width: 85px !important;
+            object-fit: cover;
+            border: 3px solid #FECA2C;
+            border-radius: 50%;
+        }
+        .page5 .itemss .rounded-3 {
+        
+        }
+
+        .page5 .row .itemss p {
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 0 2rem;
+        }
+
+
+
+    @@media all and (max-width: 600px) {
+
+
+        .content h2 {
+            font-size: 15vw;
+            line-height: 15.5vw;
+        }
+
+            .content h2 span {
+                font-size: 14.9vw;
+            }
+
+        .content p {
+            font-size: 4vw;
+        }
+
+        .page2 {
+            padding: 2rem;
+        }
+
+            .page2 > h2 {
+                font-size: 9vw;
+            }
+
+            .page2 > .image {
+                width: 100%;
+            }
+
+            .page2 > p {
+                font-size: 4vw;
+                text-align: initial;
+                line-height: 6vw;
+                width: 100%;
+            }
+
+        .page3 h2 {
+            font-size: 4.5rem;
+        }
+
+        .page3 h3 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .page4 h3 {
+            font-family: narnia;
+            font-size: 3rem;
+        }
+
+        .page4 .social-links a {
+            padding: 0.2rem 0.6rem;
+        }
+
+        .page4 .row p {
+            padding: 0 3vw;
+            font-size: 1.1rem;
+        }
+
+        .page5 h3 {
+            font-family: narnia;
+            font-size: 3rem;
+        }
+
+        .page5 .row p {
+            padding: 0 3vw;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        footer {
+            padding: 0 2rem;
+        }
+
+            footer .content1 {
+                width: 100%;
+            }
+
+            footer .socials {
+                margin-top: 0;
+            }
+
+            footer .reach {
+                margin-top: 4rem;
+            }
+    }
+
+
+   /*Animations*/
+   @@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Adjust the scale value to control the zoom level */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+</style>

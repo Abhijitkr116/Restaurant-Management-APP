@@ -1,0 +1,52 @@
+﻿@model RestaurantCopy.Models.FoodItemModel
+@{
+    ViewBag.Title = "EditDetails";
+    Layout = "~/Views/Shared/_AdminLayot.cshtml";
+}
+<h2>EditDetails</h2>
+
+@using (@Html.BeginForm("UpdateItem", "Admin"))
+            {
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Id</label>
+                        @Html.TextBoxFor(x => x.Id, new { @class = "form-control"})
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Name</label>
+                        @Html.TextBoxFor(x => x.ItemName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Item Category</label>
+                        @Html.DropDownListFor(x => x.FoodTypeId, new List<SelectListItem> { }, Model.FoodType, new { @class = "form-control", @id = "food", @required="required"})
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">Price</label>
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control disabled" })
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <input type="submit" class="btn btn-primary mt-3 w-100" />
+                    </div>
+                </div>
+            }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        debugger;
+    $.ajax({
+        url: "@Url.Action("GetFoodTypes", "Admin")",
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
+            // Iterate through the received data and update the HTML
+            $.each(response.data, function(index, item) {
+                $("#food").append("<option value='" + item.Id + "'>" + item.TypeName + "</option>");
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+        }
+    });
+});
+</script>
